@@ -1,14 +1,15 @@
 class Dictionary:
     def __init__(self):
-        pass
+        self.itaDict=self.loadDictionary("Italian.txt")
+        self.engDict=self.loadDictionary("English.txt")
+        self.espDict=self.loadDictionary("Spanish.txt")
 
     def loadDictionary(self,path):
-        pass
+        lista=[]
+        stringa="resources/"+path
+        with open(stringa,'r', encoding="utf-8") as file:
+            lista=[p.strip() for p in file.readlines()]
+        return lista
 
     def printAll(self):
         pass
-
-
-    @property
-    def dict(self):
-        return self._dict
